@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'com.arano'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    separator = System.getProperty("file.separator")
+    versionControl = [
+            springBootVersion: '2.3.4.RELEASE',
+            hutoolVersion    : '5.5.9',
+    ]
+}
+dependencies {
+    implementation(
+            "cn.hutool:hutool-all:${project.versionControl.hutoolVersion}",
+            "org.springframework.boot:spring-boot-starter-web:${project.versionControl.springBootVersion}",
+            "org.springframework.boot:spring-boot-starter-validation:${project.versionControl.springBootVersion}",
+    )
+
+}
